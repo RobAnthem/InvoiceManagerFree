@@ -1,0 +1,64 @@
+﻿<Page x:Class="Invoice_Manager.FindProduct"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Invoice_Manager"
+      mc:Ignorable="d" 
+      d:DesignHeight="375" d:DesignWidth="450"
+      Title="NewProduct">
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="images/background.jpg"/>
+        </Grid.Background>
+        <Rectangle Height="49" Stroke="Black" VerticalAlignment="Top">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="images/background2.jpg"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Label x:Name="SC_Header" Content="Products" HorizontalAlignment="Left" Margin="4,2,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.ActiveCaptionTextBrushKey}}" Width="238" FontSize="26" FontFamily="Plantagenet Cherokee"/>
+        <Button x:Name="SC_AddCustomer" Content="Add Product" Click="PopUpAdd_Click" RenderTransformOrigin="1.176,-1.443" Height="34" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="141" Margin="10,0,0,10">
+            <Button.Background>
+                <ImageBrush ImageSource="images/Button.jpg"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="SC_Cancel" Content="Cancel" Click="PopUpCancel_Click" RenderTransformOrigin="1.176,-1.443" Height="34" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="141" Margin="0,0,10,10">
+            <Button.Background>
+                <ImageBrush ImageSource="images/Button.jpg"/>
+            </Button.Background>
+        </Button>
+        <ListView x:Name="PopUpSearchView" Margin="0,109,0,60">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Product" DisplayMemberBinding="{Binding Name}" />
+                    <GridViewColumn Header="Quantity" DisplayMemberBinding="{Binding Phone}" />
+                    <GridViewColumn Header="Cost" DisplayMemberBinding="{Binding Name}" />
+
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label x:Name="SC_SearchLabel" Content="Search:" HorizontalAlignment="Left" Margin="11,46,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Height="38" Width="80" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="5.645"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="1.334"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <TextBox x:Name="PopUpSearchBox" HorizontalAlignment="Left" Height="25" Margin="99,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="126" TextChanged="PopUpSearchBox_TextChanged" MaxLength="15"/>
+        <TextBox x:Name="FP_Count" HorizontalAlignment="Left" Height="23" Margin="346,81,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="86" KeyDown="FP_Count_KeyDown" MaxLength="5" Text="1"/>
+        <Label x:Name="SC_SearchLabel_Copy" Content="Quantity" HorizontalAlignment="Left" Margin="337,47,0,0" VerticalAlignment="Top" Foreground="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Height="38" Width="93" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="5.645"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="1.334"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+    </Grid>
+</Page>
